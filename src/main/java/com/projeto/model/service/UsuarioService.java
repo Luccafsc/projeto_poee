@@ -1,5 +1,7 @@
 package com.projeto.model.service;
 
+import java.util.List;
+
 import javax.persistence.EntityTransaction;
 
 import com.projeto.estrutura.util.VariaveisProjeto;
@@ -70,11 +72,15 @@ public class UsuarioService extends ConexaoBancoService {
 		return toReturn;
 	}
 
-	
 	public Usuario findById(Integer id) {
 		return this.getUsuarioDao().findById(id);
 	}
-	
+
+	public List<Usuario> findAll() {
+		return this.getUsuarioDao().findAll(Usuario.class);
+
+	}
+
 	public Integer validarDigitacao(Usuario usuario) {
 
 		if (VariaveisProjeto.digitacaoCampo(usuario.getUsername())) {

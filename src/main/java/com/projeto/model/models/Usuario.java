@@ -39,7 +39,7 @@ public class Usuario {
 		this.username = username;
 	}
 	
-	@Column(name = "USUARIO_EMAIL", length = 200,	nullable = false, unique = true)
+	@Column(name = "USUARIO_EMAIL", length = 200,	nullable = false)
 	public String getEmail() {
 		return email;
 	}
